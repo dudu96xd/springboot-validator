@@ -4,6 +4,10 @@ drop schema mydb;
 
 use mydb;
 
+drop table usuario;
+
+drop table plano;
+
 CREATE TABLE usuario (
   id_usuario int(11) NOT NULL AUTO_INCREMENT,
   nome varchar(45) NOT NULL unique key,
@@ -17,9 +21,12 @@ CREATE TABLE usuario (
 
 select * from usuario;
 
+select * from plano;
+
 CREATE TABLE plano(
   id_plano int NOT NULL AUTO_INCREMENT,
   nome_plano varchar(45),
+  valor double,
   qnt_gigas int,
   primary key(id_plano)
 );
