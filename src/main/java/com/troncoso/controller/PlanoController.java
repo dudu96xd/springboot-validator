@@ -2,70 +2,69 @@ package com.troncoso.controller;
 
 import com.troncoso.model.ListResponse;
 import com.troncoso.model.ObjectResponse;
+import com.troncoso.model.Plano;
 import com.troncoso.model.Usuario;
-import com.troncoso.repository.UsuarioRepository;
+import com.troncoso.repository.PlanoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.util.Date;
 import java.util.List;
 
 @RestController
 @EnableAutoConfiguration
-@RequestMapping("/api/usuarios")
-public class UsuarioController {
+@RequestMapping("/api/planos")
+public class PlanoController {
 
     @Autowired
-    private UsuarioRepository usuarioRepository;
+    private PlanoRepository planoRepository;
 
     /**
-     * Get all usuarios
+     * Get all planos
      *
      * @return
      */
     @RequestMapping(method = RequestMethod.GET)
-    public ListResponse getAllUsuarios(HttpServletResponse http) {
+    public ListResponse getAllPlanos(HttpServletResponse http) {
         ListResponse response = new ListResponse();
         response.setMessage("Successfully Retrieved");
         response.setStatusCode(http.getStatus());
-        List<Usuario> usuarios = usuarioRepository.findAll();
+        List<Plano> usuarios = planoRepository.findAll();
         response.setData(usuarios);
         return response;
     }
 
     /**
-     * Create new usuario
+     * Create new plano
      *
-     * @param usuario
+     * @param plano
      * @return
      */
     @RequestMapping(method = RequestMethod.POST)
-    public ListResponse saveUsuario(@RequestBody final Usuario usuario, HttpServletResponse http) {
-        usuario.setSysDate(new Date());
-        usuarioRepository.save(usuario);
+    public ListResponse savePlano(@RequestBody final Plano plano, HttpServletResponse http) {
+        planoRepository.save(plano);
         ListResponse response = new ListResponse();
         response.setMessage("Successfully Created");
         response.setStatusCode(http.getStatus());
-        List<Usuario> usuarios = usuarioRepository.findAll();
+        List<Plano> usuarios = planoRepository.findAll();
         response.setData(usuarios);
         return response;
     }
 
     /**
-     * Get a specific usuario
+     * Get a specific plano
      *
-     * @param userId
+     * @param idPlano
      * @return
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ObjectResponse getUsuario(@PathVariable("id") Integer userId, HttpServletResponse http) {
+    public ObjectResponse getPlano(@PathVariable("id") Integer idPlano, HttpServletResponse http) {
         ObjectResponse response = new ObjectResponse();
-        if (usuarioRepository.exists(userId)) {
+        if (planoRepository.exists(idPlano)) {
             response.setMessage("Successfully Retrieved");
             response.setStatusCode(http.getStatus());
-            response.setData(usuarioRepository.findOne(userId));
+            response.setData(planoRepository.findOne(idPlano));
         } else {
             response.setMessage("Record not found");
             response.setStatusCode(404);
@@ -75,19 +74,19 @@ public class UsuarioController {
     }
 
     /**
-     * Find and update a usuario
+     * Find and update a plano
      *
-     * @param usuario
+     * @param plano
      * @return
      */
     @RequestMapping(method = RequestMethod.PUT)
-    public ObjectResponse updateUsuario(@RequestBody final Usuario usuario, HttpServletResponse http) {
+    public ObjectResponse updatePlano(@RequestBody final Plano plano, HttpServletResponse http) {
         ObjectResponse response = new ObjectResponse();
-        if (usuarioRepository.exists(usuario.getId())) {
-            usuarioRepository.updateUsuario(usuario.getName(), usuario.getEmail(), usuario.getSysDate(), usuario.getId());
+        if (planoRepository.exists(plano.getId())) {
+            planoRepository.updatePlano(plano.getName(), plano.getQntGigas(), plano.getId());
             response.setMessage("Successfully Updated");
             response.setStatusCode(http.getStatus());
-            response.setData(usuarioRepository.findOne(usuario.getId()));
+            response.setData(planoRepository.findOne(plano.getId()));
         } else {
             response.setMessage("Record not found");
             response.setStatusCode(404);
@@ -97,23 +96,23 @@ public class UsuarioController {
     }
 
     /**
-     * Delete a usuario
+     * Delete an plano
      *
-     * @param userId
+     * @param
      * @return
      */
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public ListResponse deleteUsuario(@PathVariable("id") Integer userId, HttpServletResponse http) {
+    public ListResponse deletePlano(@PathVariable("id") Integer idPlano, HttpServletResponse http) {
         ListResponse response = new ListResponse();
-        if(usuarioRepository.exists(userId)) {
-            usuarioRepository.delete(userId);
+        if(planoRepository.exists(idPlano)) {
+            planoRepository.delete(idPlano);
             response.setStatusCode(http.getStatus());
             response.setMessage("Successfully Deleted");
         } else {
             response.setStatusCode(404);
             response.setMessage("Record not found");
         }
-        List<Usuario> usuarios = usuarioRepository.findAll();
+        List<Plano> usuarios = planoRepository.findAll();
         response.setData(usuarios);
         return response;
     }

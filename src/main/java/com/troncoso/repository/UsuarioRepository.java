@@ -14,9 +14,9 @@ import java.util.Date;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
 
-    /*@Modifying
+    @Modifying
     @Transactional
-    @Query("update Usuario usuario set usuario.nome=:nome, usuario.email=:email, usuario.data_cadastro=:data_cadastro where usuario.id_usuario=:id_usuario")
-    void updateUser(@Param("nome") String name, @Param("email") String email,
-                    @Param("data_cadastro") Date data_cadastro, @Param("id_usuario") Integer id_usuario);*/
+    @Query("update Usuario usuario set usuario.name=:nome, usuario.email=:email, usuario.sysDate=:data_cadastro where usuario.id=:id_usuario")
+    void updateUsuario(@Param("nome") String name, @Param("email") String email,
+                       @Param("data_cadastro") Date data_cadastro, @Param("id_usuario") Integer id_usuario);
 }
