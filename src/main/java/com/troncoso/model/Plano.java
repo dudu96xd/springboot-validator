@@ -14,6 +14,9 @@ public class Plano {
     @Column(name = "nome_plano")
     private String name;
 
+    @Column(name = "valor")
+    private Double valor;
+
     @Column(name = "qnt_gigas")
     private Integer qntGigas;
 
@@ -39,5 +42,13 @@ public class Plano {
 
     public void setQntGigas(Integer qntGigas) {
         this.qntGigas = qntGigas;
+    }
+
+    public Double getValor() {
+        return valor;
+    }
+
+    public void setValor(Double valor) {
+        this.valor = valor;
     }
 }

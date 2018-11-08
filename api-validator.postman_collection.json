@@ -20,7 +20,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"name\": \"combo1\",\r\n        \"qntGigas\": \"120\"\r\n}"
+							"raw": "{\r\n        \"name\": \"combo1\",\r\n        \"qntGigas\": \"120\",\r\n        \"valor\" : \"300.50\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/planos",
@@ -65,7 +65,7 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:8080/api/planos/2",
+							"raw": "http://localhost:8080/api/planos/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -74,7 +74,7 @@
 							"path": [
 								"api",
 								"planos",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -114,7 +114,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"id\": \"2\",\r\n    \"name\": \"combo1\",\r\n    \"qntGigas\": \"120\"\r\n}"
+							"raw": "{\r\n\t\"id\": \"1\",\r\n    \"name\": \"combo1\",\r\n    \"qntGigas\": \"120\",\r\n    \"valor\": \"250.66\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/planos",
@@ -148,7 +148,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"name\": \"Igor Eduardo\",\r\n        \"email\": \"dudu96xd@gmail.com\",\r\n        \"mobile\": \"(11) 95146-3701\"\r\n}"
+							"raw": "{\r\n        \"name\": \"LLL2222\",\r\n        \"email\": \"dudu96xd@gmail.com\",\r\n        \"linha\": \"(11) 95146-3701\",\r\n        \"idPlano\": \"1\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api/usuarios",
@@ -242,10 +242,10 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"id\": \"1\",\r\n    \"name\": \"combo1\",\r\n    \"qntGigas\": \"120\"\r\n}"
+							"raw": "{\r\n\t\"id\": 1,\r\n    \"name\": \"KKK6666\",\r\n    \"email\": \"dudu96xd@gmail.com\",\r\n    \"sysDate\": 1541678565745,\r\n    \"linha\": \"(11) 95146-3701\",\r\n    \"idPlano\": \"1\"\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/planos",
+							"raw": "http://localhost:8080/api/usuarios",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -253,7 +253,7 @@
 							"port": "8080",
 							"path": [
 								"api",
-								"planos"
+								"usuarios"
 							]
 						}
 					},

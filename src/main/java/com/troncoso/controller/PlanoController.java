@@ -83,7 +83,7 @@ public class PlanoController {
     public ObjectResponse updatePlano(@RequestBody final Plano plano, HttpServletResponse http) {
         ObjectResponse response = new ObjectResponse();
         if (planoRepository.exists(plano.getId())) {
-            planoRepository.updatePlano(plano.getName(), plano.getQntGigas(), plano.getId());
+            planoRepository.updatePlano(plano.getName(), plano.getQntGigas(), plano.getId(), plano.getValor());
             response.setMessage("Successfully Updated");
             response.setStatusCode(http.getStatus());
             response.setData(planoRepository.findOne(plano.getId()));

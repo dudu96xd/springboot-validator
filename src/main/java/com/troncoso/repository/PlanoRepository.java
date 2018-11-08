@@ -15,6 +15,6 @@ public interface PlanoRepository extends JpaRepository<Plano, Integer> {
 
     @Modifying
     @Transactional
-    @Query("update Plano p set p.name=:nome, p.qntGigas=:qntGigas where p.id=:idPlano")
-    void updatePlano(@Param("nome") String name, @Param("qntGigas") Integer qntGigas, @Param("idPlano") Integer idPlano);
+    @Query("update Plano p set p.name=:nome, p.valor=:valor, p.qntGigas=:qntGigas where p.id=:idPlano")
+    void updatePlano(@Param("nome") String name, @Param("qntGigas") Integer qntGigas, @Param("idPlano") Integer idPlano,@Param("valor") Double valor);
 }
