@@ -9,7 +9,6 @@
     <packaging>war</packaging>
 
     <name>spring-boot-validator</name>
-    <description>BetaSquirrel project for Spring Boot</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
