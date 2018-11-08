@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @RestController
 @EnableAutoConfiguration
@@ -44,12 +46,19 @@ public class UsuarioController {
     @RequestMapping(method = RequestMethod.POST)
     public ListResponse saveUsuario(@RequestBody final Usuario usuario, HttpServletResponse http) {
         usuario.setSysDate(new Date());
-        usuarioRepository.save(usuario);
+        Pattern pattern = Pattern.compile("[A-Z]{3}[0-9]{4}");
+        Matcher matcher = pattern.matcher(usuario.getName());
         ListResponse response = new ListResponse();
-        response.setMessage("Successfully Created");
-        response.setStatusCode(http.getStatus());
-        List<Usuario> usuarios = usuarioRepository.findAll();
-        response.setData(usuarios);
+        if(!matcher.matches()) {
+            response.setMessage("name field not compile for regex [A-Z]{3}[0-9]{4}");
+            response.setStatusCode(500);
+        }else{
+            usuarioRepository.save(usuario);
+            response.setMessage("Successfully Created");
+            response.setStatusCode(http.getStatus());
+            List<Usuario> usuarios = usuarioRepository.findAll();
+            response.setData(usuarios);
+        }
         return response;
     }
 
