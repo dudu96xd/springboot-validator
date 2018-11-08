@@ -12,11 +12,12 @@ Table Structure
 
 
 ``CREATE TABLE plano(
-  id_plano int NOT NULL AUTO_INCREMENT,
-  nome_plano varchar(45),
-  qnt_gigas int,
-  primary key(id_plano)
-);``
+    id_plano int NOT NULL AUTO_INCREMENT,
+    nome_plano varchar(45),
+    valor double,
+    qnt_gigas int,
+    primary key(id_plano)
+  );``
 
 ``CREATE TABLE usuario (
   id_usuario int(11) NOT NULL AUTO_INCREMENT,
