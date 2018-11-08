@@ -12,68 +12,26 @@ Setup
 
 Table Structure
 ---------------
-``CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `mobile` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;``
 
-``ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);``
-  
-``ALTER TABLE `usuarios`
-    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;``
-    
-API Doc & Sample
-----------------
-- List all usuarios
-    ```
-    GET /api/v1/usuarios
-    ```
-- Create new usuario
-    ```
-    POST /api/v1/usuarios
-    ```
 
-    Body:
-    ```
-    {
-        "name": "Mark Price",
-        "email": "mark@devslopes.com",
-        "mobile": "0123456789"
-    }
-    ```
-    Content-Type:
-    ```
-    application/json
-    ```
-- Get specific usuario
-    ```
-    GET /api/v1/usuarios/1
-    ```
-- Update usuario
-    ```
-    PUT /api/v1/usuarios
-    ```
-    Body:
-    ```
-    {
-        "id":1,
-        "name": "Jeffrey Way",
-        "email": "jeffrey@laracasts.com",
-        "mobile": "0123456789"
-    }
-    ```
-    
-    Content-Type:
-    ```
-    application/json
-    ```
-- Delete usuario
-    ```
-    DELETE /api/v1/usuarios/1
-    ```
+CREATE TABLE plano(
+  id_plano int NOT NULL AUTO_INCREMENT,
+  nome_plano varchar(45),
+  qnt_gigas int,
+  primary key(id_plano)
+);
+
+CREATE TABLE usuario (
+  id_usuario int(11) NOT NULL AUTO_INCREMENT,
+  nome varchar(45) NOT NULL unique key,
+  email varchar(45) NOT NULL unique key,
+  data_cadastro date,
+  linha varchar(45) NOT NULL unique key,
+  id_plano int default null,
+  primary key(id_usuario),
+  foreign key(id_plano) references plano(id_plano)
+);
+
 Note
 -----
 For getting XML response use ``Accept`` header ``application/xml`` and ``application/json`` for JSON response.
