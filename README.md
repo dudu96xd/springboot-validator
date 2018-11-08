@@ -1,6 +1,3 @@
-# spring-boot-rest-api-template
-Spring boot REST API project template using jpa (Springboot REST API whch connects MySQL database).
-
 Setup
 -----
 - Clone and open in Intellij Idea IDE
