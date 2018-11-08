@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -42,6 +43,7 @@ public class UsuarioController {
      */
     @RequestMapping(method = RequestMethod.POST)
     public ListResponse saveUser(@RequestBody final Usuario usuario, HttpServletResponse http) {
+        usuario.setSysDate(new Date());
         usuarioRepository.save(usuario);
         ListResponse response = new ListResponse();
         response.setMessage("Successfully Created");
