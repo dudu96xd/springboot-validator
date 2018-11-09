@@ -2,4 +2,4 @@ docker run --name=docker-mysql --env="MYSQL_ROOT_PASSWORD=1234" --env="MYSQL_PAS
 
 docker build -f Dockerfile -t springboot-validator .
 
-docker run -t --name gradle-springboot-docker --link docker-mysql:mysql -p 8080:8080 gradle-springboot-docker
+docker run -t --name springboot-validator --link docker-mysql:mysql -p 8081:8081 springboot-validator
