@@ -3,19 +3,21 @@ version: '3'
 services:
   docker-mysql:
     image: mysql:latest
+    ports:
+    - "6603:3306"
     environment:
-    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_ROOT_PASSWORD=1234
     - MYSQL_DATABASE=mydb
     - MYSQL_PASSWORD=1234
   spring-boot-jpa-docker-webapp:
-    image: maven-springboot
+    image: springboot-validator
     depends_on:
     - docker-mysql
     ports:
     - 8081:8081
     environment:
-    - DATABASE_HOST=docker-mysql
+    - DATABASE_HOST=localhost
     - DATABASE_USER=root
     - DATABASE_PASSWORD=1234
     - DATABASE_NAME=mydb
-  - DATABASE_PORT=3306
+    - DATABASE_PORT=6603
