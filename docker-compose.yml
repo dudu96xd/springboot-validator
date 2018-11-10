@@ -4,7 +4,7 @@ services:
   docker-mysql:
     image: mysql:latest
     ports:
-    - "6603:3306"
+    - 3306
     environment:
     - MYSQL_ROOT_PASSWORD=1234
     - MYSQL_DATABASE=mydb
@@ -20,4 +20,4 @@ services:
     - DATABASE_USER=root
     - DATABASE_PASSWORD=1234
     - DATABASE_NAME=mydb
-    - DATABASE_PORT=6603
+    - DATABASE_PORT=3306
