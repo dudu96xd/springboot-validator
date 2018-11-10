@@ -16,7 +16,7 @@ services:
     ports:
     - 8081:8081
     environment:
-    - DATABASE_HOST=localhost
+    - DATABASE_HOST=172.18.0.2
     - DATABASE_USER=root
     - DATABASE_PASSWORD=1234
     - DATABASE_NAME=mydb
