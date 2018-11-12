@@ -1,4 +1,4 @@
-version: '3'
+version: '2.1'
 
 services:
 
@@ -8,10 +8,13 @@ services:
     - MYSQL_ROOT_PASSWORD=1234
     - MYSQL_DATABASE=mydb
     - MYSQL_PASSWORD=1234
+    healthcheck:
+      test: mysql --protocol=socket -hlocalhost -uroot -p1234 -e 'SELECT 1'
   spring-boot-jpa-docker-webapp:
     image: alatharn/springboot-validator
     depends_on:
-    - docker-mysql
+      docker-mysql:
+        condition: service_healthy
     ports:
     - 8081:8081
     environment:
@@ -22,3 +25,8 @@ services:
     - DATABASE_PORT=3306
     links:
     - docker-mysql
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3306"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
