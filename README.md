@@ -4,7 +4,7 @@ Setup
 - Change database connection config in `src/main/resources/application.properties`
 - Install maven dependencies using IDE auto import or using the command ``mvn install``
 - Run the app using ``docker-compose up``
-- Browse ``http//localhost:8080/api/planos``
+- Browse ``http//localhost:8081/api/planos``
 
 Table Structure
 ---------------
