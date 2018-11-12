@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "fa1b1310-c3e4-4b3b-b61c-e7dc4696d072",
+		"_postman_id": "6afd0677-24a1-4c6d-9bdc-39ce8df7f6b3",
 		"name": "api-validator",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -23,12 +23,12 @@
 							"raw": "{\r\n        \"name\": \"combo1\",\r\n        \"qntGigas\": \"120\",\r\n        \"valor\" : \"300.50\"\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/planos",
+							"raw": "http://localhost:8081/api/planos",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8081",
 							"path": [
 								"api",
 								"planos"
@@ -42,14 +42,17 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:8080/api/planos",
+							"raw": "http://localhost:8081/api/planos",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8081",
 							"path": [
 								"api",
 								"planos"
@@ -63,14 +66,17 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:8080/api/planos/1",
+							"raw": "http://localhost:8081/api/planos/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8081",
 							"path": [
 								"api",
 								"planos",
@@ -85,14 +91,17 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:8080/api/planos/1",
+							"raw": "http://localhost:8081/api/planos/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8081",
 							"path": [
 								"api",
 								"planos",
@@ -117,12 +126,12 @@
 							"raw": "{\r\n\t\"id\": \"1\",\r\n    \"name\": \"combo1\",\r\n    \"qntGigas\": \"120\",\r\n    \"valor\": \"250.66\"\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/planos",
+							"raw": "http://localhost:8081/api/planos",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8081",
 							"path": [
 								"api",
 								"planos"
@@ -151,12 +160,12 @@
 							"raw": "{\r\n        \"name\": \"LLL2222\",\r\n        \"email\": \"dudu96xd@gmail.com\",\r\n        \"linha\": \"(11) 95146-3701\",\r\n        \"idPlano\": \"1\"\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/usuarios",
+							"raw": "http://localhost:8081/api/usuarios",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8081",
 							"path": [
 								"api",
 								"usuarios"
@@ -170,14 +179,17 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:8080/api/usuarios",
+							"raw": "http://localhost:8081/api/usuarios",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8081",
 							"path": [
 								"api",
 								"usuarios"
@@ -191,14 +203,17 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:8080/api/usuarios/1",
+							"raw": "http://localhost:8081/api/usuarios/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8081",
 							"path": [
 								"api",
 								"usuarios",
@@ -213,14 +228,17 @@
 					"request": {
 						"method": "DELETE",
 						"header": [],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
-							"raw": "http://localhost:8080/api/usuarios/1",
+							"raw": "http://localhost:8081/api/usuarios/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8081",
 							"path": [
 								"api",
 								"usuarios",
@@ -245,12 +263,12 @@
 							"raw": "{\r\n\t\"id\": 1,\r\n    \"name\": \"KKK6666\",\r\n    \"email\": \"dudu96xd@gmail.com\",\r\n    \"sysDate\": 1541678565745,\r\n    \"linha\": \"(11) 95146-3701\",\r\n    \"idPlano\": \"1\"\r\n}"
 						},
 						"url": {
-							"raw": "http://localhost:8080/api/usuarios",
+							"raw": "http://localhost:8081/api/usuarios",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "8080",
+							"port": "8081",
 							"path": [
 								"api",
 								"usuarios"
