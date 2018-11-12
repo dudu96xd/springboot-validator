@@ -4,7 +4,6 @@ Setup
 - Change database connection config in `src/main/resources/application.properties`
 - Install maven dependencies using IDE auto import or using the command ``mvn install``
 - Run the app using ``docker-compose up``
-- Run Table Structure script on mysql docker instance
 - Browse ``http//localhost:8080/api/planos``
 
 Table Structure
