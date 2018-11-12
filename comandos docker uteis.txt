@@ -3,3 +3,8 @@ docker run --name=docker-mysql --env="MYSQL_ROOT_PASSWORD=1234" --env="MYSQL_PAS
 docker build -f Dockerfile -t springboot-validator .
 
 docker run -t --name springboot-validator --link docker-mysql:mysql -p 8081:8081 springboot-validator
+
+
+echo "use mydb;" >> dump.sql
+echo "CREATE TABLE plano(  id_plano int NOT NULL AUTO_INCREMENT,  nome_plano varchar(45),  valor double,  qnt_gigas int,  primary key(id_plano));" >> dump.sql
+echo "CREATE TABLE usuario (  id_usuario int(11) NOT NULL AUTO_INCREMENT,  nome varchar(45) NOT NULL unique key,  email varchar(45) NOT NULL unique key,  data_cadastro date,  linha varchar(45) NOT NULL unique key,  id_plano int default null,  primary key(id_usuario),  foreign key(id_plano) references plano(id_plano));" >> dump.sql

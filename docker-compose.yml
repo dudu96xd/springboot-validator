@@ -1,13 +1,14 @@
 version: '2.1'
 
 services:
-
   docker-mysql:
-    image: mysql
+    image: alatharn/mysql-springboot-validator
     environment:
     - MYSQL_ROOT_PASSWORD=1234
     - MYSQL_DATABASE=mydb
     - MYSQL_PASSWORD=1234
+    volumes:
+      - /docker-entrypoint-initdb.d
     healthcheck:
       test: mysql --protocol=socket -hlocalhost -uroot -p1234 -e 'SELECT 1'
   spring-boot-jpa-docker-webapp:
