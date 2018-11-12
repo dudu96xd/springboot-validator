@@ -1,6 +1,7 @@
 version: '3'
 
 services:
+
   docker-mysql:
     image: mysql
     environment:
@@ -8,7 +9,7 @@ services:
     - MYSQL_DATABASE=mydb
     - MYSQL_PASSWORD=1234
   spring-boot-jpa-docker-webapp:
-    image: springboot-validator
+    image: alatharn/springboot-validator
     depends_on:
     - docker-mysql
     ports:
@@ -19,3 +20,5 @@ services:
     - DATABASE_PASSWORD=1234
     - DATABASE_NAME=mydb
     - DATABASE_PORT=3306
+    links:
+    - docker-mysql
