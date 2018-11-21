@@ -5,6 +5,7 @@ Setup
 - Install maven dependencies using IDE auto import or using the command ``mvn install``
 - Run the app using ``docker-compose up``
 - Browse ``http//localhost:8081/api/planos``
+- PS: You can import via Postman the collection api-validator.postman_collection.json
 
 Table Structure
 ---------------
