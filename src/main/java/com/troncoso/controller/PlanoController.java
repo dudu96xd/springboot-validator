@@ -115,5 +115,6 @@ public class PlanoController {
         List<Plano> usuarios = planoRepository.findAll();
         response.setData(usuarios);
         return response;
+        
     }
 }
